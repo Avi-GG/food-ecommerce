@@ -67,10 +67,10 @@ const AppLayout = () => {
 	
 	return (
 		<Provider store={appStore}> {/*redux*/}
-		<div className="app font-['Poppins']">
+		<div className="app font-['Poppins'] pt-28 ">
 			<Header/>
 			<Outlet/>
-			<footer>Footer</footer>
+			<footer className="shadow-sm font-semibold text-center border-t border-black p-5  bottom-0 w-full">Created by   ❤️ Avi Gupta  <span className="mx-1">&copy;</span> 2024 Khaana <span className="text-orange-800">Food</span></footer>
 		</div>
 		</Provider>
 	);

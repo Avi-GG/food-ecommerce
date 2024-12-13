@@ -66,7 +66,7 @@ const Body = () => {
 						className="filter-btn px-4 py-1 bg-gray-200 border-2 border-transparent hover:border-gray-700 rounded"
 						onClick={() => {
 							const filteredList = restaurantList1.filter(
-								(res) => res.info.avgRating > 4
+								(res) => res.info.avgRating > 4.5
 							);
 							setrestaurantList(filteredList);
 						}}

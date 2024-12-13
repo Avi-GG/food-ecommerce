@@ -17,10 +17,10 @@ const Header = () => {
 
 
 	return (
-		<div className="flex items-center justify-between text-emerald-700  bg-green-200 shadow-lg">
+		<div className="flex items-center justify-between text-emerald-700  bg-green-200 shadow-lg fixed z-10 w-full h-24 top-0 m-">
 			<div className="logo-container">
 				<img
-					className="w-40 ml-5 drop-shadow-[0rem_0rem_1rem_#0DE789]" 
+					className="w-28 ml-5 drop-shadow-[0rem_0rem_1rem_#0DE789]" 
 					src={LOGO}
 				></img>
 			</div>
