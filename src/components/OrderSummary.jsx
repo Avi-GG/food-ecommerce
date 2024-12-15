@@ -97,7 +97,7 @@ const OrderSummary = () => {
       {/* Order Button */}
       <div className="text-center">
         <button
-          onClick={() => navigate("/checkout/orderSummary")}
+          onClick={() => navigate("/checkout/orderSuccessful")}
           className="bg-black text-white px-8 py-2 rounded-full"
         >
           Place Order
