@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { CDN_URL } from '../utils/constants';
+import { clearCart } from '../utils/cartSlice';
 
 const OrderSummary = () => {
   const [shippingAddress, setShippingAddress] = useState(null);
   const cartItems = useSelector((state) => state.cart.items); // Assuming the cart items are stored in Redux state
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // Load the shipping address (you can retrieve this from your state or localStorage)
@@ -16,7 +18,16 @@ const OrderSummary = () => {
   
   const deliveryCharge = 50;
   
+  const handlePlaceOrder = () => {
+    // Clear the cart in Redux store
+    dispatch(clearCart());
 
+    // Optionally, clear the cart from localStorage as well
+    localStorage.removeItem('cart');
+
+    // Navigate to the order successful page
+    navigate("/checkout/orderSuccessful");
+  };
   
 
   const totalItems = cartItems.reduce((sum, item) => sum + item.count, 0);
@@ -97,7 +108,7 @@ const OrderSummary = () => {
       {/* Order Button */}
       <div className="text-center">
         <button
-          onClick={() => navigate("/checkout/orderSuccessful")}
+          onClick={handlePlaceOrder}
           className="bg-black text-white px-8 py-2 rounded-full"
         >
           Place Order

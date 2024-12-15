@@ -66,7 +66,7 @@ const Contact = () => {
 
 
 	return (
-		<div className="flex w-8/12 mx-auto h-[73vh]">
+		<div className="flex w-8/12 mx-auto min-h-[75vh]">
 			<img
 				className="w-1/2 p-5 object-cover mr-10"
 				src="https://foodfire-app.netlify.app/contactUs.6d5a1f67.png"

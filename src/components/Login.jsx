@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom'; // Importing useNavigate
+import { NavLink, useNavigate } from 'react-router-dom'; // Importing useNavigate
 import { useDispatch } from 'react-redux';  // Importing useDispatch
 import { setCartItems } from '../utils/cartSlice'; // Import the action for setting cart items
 import { getFirestore, doc, getDoc } from 'firebase/firestore'; // Firestore functions
@@ -41,7 +41,7 @@ const Login = () => {
   };
 
   return (
-    <div className='min-h-[73vh] flex items-center justify-center'>
+    <div className='min-h-[75vh] flex items-center justify-center'>
       <div className='w-80 h-96 border border-[#c5680c] p-5 rounded-2xl shadow-2xl relative'>
         <h2 className='font-semibold text-3xl text-center mt-8 mb-5 text-[#c5680c]'>Login</h2>
         <form className='flex flex-col h-40 w-full' onSubmit={handleLogin}>
@@ -65,7 +65,7 @@ const Login = () => {
         </form>
         {error && <p className='text-red-600 text-sm mt-9'>{error}</p>}
         <p className='text-sm text-center left-0 right-0 absolute bottom-5'>
-          Don't have an account? <a className='text-blue-600 font-semibold' href="/signup">Sign up</a>
+          Don't have an account? <NavLink className='text-blue-600 font-semibold' to="/signup">Sign up</NavLink>
         </p>
       </div>
     </div>

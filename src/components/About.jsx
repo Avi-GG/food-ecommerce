@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="about-us">
+    <div className="about-us min-h-[75vh]">
       {/* Hero Section */}
       <div
         className="w-full h-[70vh] bg-cover bg-center flex items-center justify-center"

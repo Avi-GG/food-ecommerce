@@ -198,13 +198,15 @@ const ShippingAddressPage = () => {
                 >
                     {isEditing ? 'Update Address' : 'Add Address'}
                 </button>
+                {addresses.length > 0 && (
                 <button
-                    type="submit"
-                    onClick={() => navigate("/checkout/orderSummary")}
-                    className="w-full bg-black text-white p-2 rounded"
+                  type="submit"
+                  onClick={() => navigate("/checkout/orderSummary")}
+                  className="w-full bg-black text-white p-2 rounded"
                 >
-                    Next
+                  Next
                 </button>
+              )}
                 </span>
                 </form>
             </div>

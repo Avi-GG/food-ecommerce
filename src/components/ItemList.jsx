@@ -31,15 +31,17 @@ const ItemList = ({ items = [], showRemoveBtn}) => {
                         </div>
                         <p>{item?.card?.info?.description}</p>
                     </div>
-                    <div className='w-28 relative'>
-                        
-                        <img className='w-28 rounded-md' src={CDN_URL + item?.card?.info?.imageId} alt="" />
-                        <div className='absolute mx-6 rounded-lg border -my-5 '>
-                            <button className='p-2 bg-white shadow-lg rounded-lg bottom-0' onClick={() => handleAddItem(item)}> ADD + </button>
+                    <div>
+                        <div className='w-32 h-32 overflow-hidden relative rounded-md'>
+                            
+                            <img className='w-32 z-0 object-contain relative -top-4 overflow-hidden rounded-md' src={CDN_URL + item?.card?.info?.imageId} alt="" />
+                            
+                        </div>
+                        <div className=' mx-6 relative top-1  rounded-lg -my-5 flex'>
+                            <button className={`p-2 z-2 relative ${showRemoveBtn && "-left-5"}  bg-[#c5680c] text-white rounded-lg shadow-lg hover:bg-blue-600 transition duration-300`} onClick={() => handleAddItem(item)}> ADD + </button>
+                            {showRemoveBtn && <button className='p-2 z-2  relative bg-red-600 text-white rounded-lg shadow-lg hover:bg-blue-600 transition duration-300' onClick={() => handleRemove(item)}> REMOVE - </button>}
                         </div>
                     </div>
-                    {showRemoveBtn && <button onClick={() => handleRemove(item)}>Remove</button>}
-                    
                 </div>))}
         </ul>
       
