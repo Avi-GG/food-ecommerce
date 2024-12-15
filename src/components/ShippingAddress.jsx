@@ -194,14 +194,14 @@ const ShippingAddressPage = () => {
                 <button
                     type="submit"
                     onClick={handleFormSubmit}
-                    className="w-full bg-blue-500 text-white p-2 rounded"
+                    className="w-full bg-black text-white p-2 rounded"
                 >
                     {isEditing ? 'Update Address' : 'Add Address'}
                 </button>
                 <button
                     type="submit"
                     onClick={() => navigate("/checkout/orderSummary")}
-                    className="w-full bg-blue-500 text-white p-2 rounded"
+                    className="w-full bg-black text-white p-2 rounded"
                 >
                     Next
                 </button>

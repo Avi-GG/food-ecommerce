@@ -31,7 +31,7 @@ const OrderSummary = () => {
   );
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 w-8/12 border border-gray-200 rounded-md shadow-md my-5">
       <h2 className="text-2xl font-bold mb-6">Order Summary</h2>
 
       {/* Cart Items */}
@@ -103,7 +103,7 @@ const OrderSummary = () => {
       <div className="text-center">
         <button
           onClick={handleOrderSubmit}
-          className="bg-blue-500 text-white px-8 py-2 rounded-full"
+          className="bg-black text-white px-8 py-2 rounded-full"
           disabled={!shippingAddress || cartItems.length === 0}
         >
           Place Order
