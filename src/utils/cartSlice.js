@@ -1,11 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { firestore, auth } from "../firebase";
 import { doc, setDoc, getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
 
 
-const firestore = getFirestore();
-const auth = getAuth();
 
 const cartSlice = createSlice({
   name: "cart",
