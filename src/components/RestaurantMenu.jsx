@@ -40,17 +40,17 @@ const RestaurantMenu = () => {
 					src={CDN_URL + cloudinaryImageId}
 					alt={name}
 				/>
-				<div class="restaurant-summary-details flex flex-col h-full  w-1/2 text-left  m-5  text-white">
-					<h1 class="restaurant-title text-4xl">{name}</h1>
-					<p class="restaurant-tags text-gray-400 mt-3">{cuisines.join(", ")}</p>
-					<div class="restaurant-details font-semibold flex gap-3 mt-8">
-						<span class="restaurant-rating" >
-							<i class="fa-solid fa-star"></i>
+				<div className="restaurant-summary-details flex flex-col h-full  w-1/2 text-left  m-5  text-white">
+					<h1 className="restaurant-title text-4xl">{name}</h1>
+					<p className="restaurant-tags text-gray-400 mt-3">{cuisines.join(", ")}</p>
+					<div className="restaurant-details font-semibold flex gap-3 mt-8">
+						<span className="restaurant-rating" >
+							<i className="fa-solid fa-star"></i>
 							<span>{avgRating}</span>
 						</span>
-						<span class="restaurant-rating-slash">|</span>
+						<span className="restaurant-rating-slash">|</span>
 						<span>{sla?.slaString} </span>
-						<span class="restaurant-rating-slash">|</span>
+						<span className="restaurant-rating-slash">|</span>
 						<span>{costForTwoMessage}</span>
 					</div>
 				</div>
