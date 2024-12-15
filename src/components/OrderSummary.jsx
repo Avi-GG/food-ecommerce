@@ -99,7 +99,6 @@ const OrderSummary = () => {
         <button
           onClick={() => navigate("/checkout/orderSummary")}
           className="bg-black text-white px-8 py-2 rounded-full"
-          disabled={!shippingAddress || cartItems.length === 0}
         >
           Place Order
         </button>
