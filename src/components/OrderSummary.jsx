@@ -17,12 +17,7 @@ const OrderSummary = () => {
   const deliveryCharge = 50;
   
 
-  const handleOrderSubmit = () => {
-    // Handle order submission (e.g., save to database, call API, etc.)
-    console.log('Order submitted');
-    // Redirect to confirmation or thank you page
-    navigate('/checkout/orderSuccessful');
-  };
+  
 
   const totalItems = cartItems.reduce((sum, item) => sum + item.count, 0);
   const totalPrice = cartItems.reduce(
@@ -102,7 +97,7 @@ const OrderSummary = () => {
       {/* Order Button */}
       <div className="text-center">
         <button
-          onClick={handleOrderSubmit}
+          onClick={() => navigate("/checkout/orderSummary")}
           className="bg-black text-white px-8 py-2 rounded-full"
           disabled={!shippingAddress || cartItems.length === 0}
         >
