@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ItemList from './ItemList';
 import { clearCart } from '../utils/cartSlice';
 import { useNavigate } from 'react-router-dom';
+
 const Cart = () => {
   // Get cart items from Redux store
   const cartItems = useSelector((store) => store.cart.items);
