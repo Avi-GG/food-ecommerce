@@ -36,12 +36,15 @@ const Cart = () => {
       }
     });
 
+    return () => unsubscribe(); // Cleanup the auth listener
+  }, [dispatch]);
+
+
   const totalItems = cartItems.reduce((sum, item) => sum + item.count, 0);
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + (item?.card?.info?.price || item?.card?.info?.defaultPrice) * item.count,
     0
   );
-  })
 
   return (
     <div className="text-center m-4 p-4 min-h-[68vh]">
