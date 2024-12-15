@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ItemList from './ItemList';
-import { clearCart } from '../utils/cartSlice';
+import { setCartItems, clearCart } from '../utils/cartSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
@@ -17,11 +17,31 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
+  useEffect(() => {
+    // Check if the user is logged in (Firebase auth)
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        // If logged in, fetch the user's cart from Firestore
+        const userRef = doc(firestore, "users", user.uid);
+        const docSnap = await getDoc(userRef);
+
+        if (docSnap.exists()) {
+          const userCart = docSnap.data().cart;
+          dispatch(setCartItems(userCart)); // Update Redux store with cart items from Firestore
+        }
+      } else {
+        // If not logged in, load cart from localStorage
+        const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        dispatch(setCartItems(savedCart));
+      }
+    });
+
   const totalItems = cartItems.reduce((sum, item) => sum + item.count, 0);
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + (item?.card?.info?.price || item?.card?.info?.defaultPrice) * item.count,
     0
   );
+  })
 
   return (
     <div className="text-center m-4 p-4 min-h-[68vh]">
