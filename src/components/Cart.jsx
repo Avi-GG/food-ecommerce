@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import ItemList from './ItemList';
 import { setCartItems, clearCart } from '../utils/cartSlice';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { auth, firestore } from '../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 const Cart = () => {
   // Get cart items from Redux store
