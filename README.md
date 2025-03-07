@@ -1,5 +1,5 @@
 # Food e-commerce 🚀
-
+#Live Link - https://khaanafood.netlify.app/
 # parcel
  - Dev Build
  - Local server
